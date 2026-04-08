@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cfxqy72key3id"]
+
+[ext_resource type="Script" uid="uid://tceb7n5r8p0c" path="res://main/main_controller.gd" id="1_53q0u"]
+[ext_resource type="Texture2D" uid="uid://dsot86bb0tt6v" path="res://assets/background.png" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://dwll54vvy1plm" path="res://main/player/player.tscn" id="3_xwkvk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwkvk"]
+distance = -91.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c651c"]
+normal = Vector2(-1, 0)
+distance = -592.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3wy1v"]
+normal = Vector2(1, 0)
+distance = -557.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwkvk"]
+size = Vector2(416, 69)
+
+[node name="MainController" type="Node" unique_id=857405349]
+script = ExtResource("1_53q0u")
+
+[node name="SwimmingPool" type="Node2D" parent="." unique_id=1747023405]
+
+[node name="Background" type="Sprite2D" parent="SwimmingPool" unique_id=330199885]
+position = Vector2(585.875, 1978.3906)
+scale = Vector2(2.7409704, 2.7409704)
+texture = ExtResource("2_xwkvk")
+
+[node name="WorldBoundary" type="StaticBody2D" parent="SwimmingPool" unique_id=1253131135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=1907589114]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_xwkvk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=2036579926]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_c651c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=1937639759]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_3wy1v")
+
+[node name="Player" parent="SwimmingPool" unique_id=1274872764 instance=ExtResource("3_xwkvk")]
+position = Vector2(324, 543)
+
+[node name="Tower" type="StaticBody2D" parent="SwimmingPool" unique_id=181180395]
+visible = false
+position = Vector2(9, 607)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/Tower" unique_id=1477726587]
+position = Vector2(208, 34.5)
+shape = SubResource("RectangleShape2D_xwkvk")
