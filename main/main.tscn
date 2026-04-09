@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://tceb7n5r8p0c" path="res://main/main_controller.gd" id="1_53q0u"]
 [ext_resource type="Texture2D" uid="uid://dsot86bb0tt6v" path="res://assets/background.png" id="2_xwkvk"]
-[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://ragdoll.tscn" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://ragdoll.tscn" id="3_c651c"]
+[ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="4_c651c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwkvk"]
 distance = -91.0
@@ -50,5 +51,10 @@ position = Vector2(9, 722)
 position = Vector2(208, 41)
 shape = SubResource("RectangleShape2D_xwkvk")
 
-[node name="Node2D" parent="." unique_id=498371907 instance=ExtResource("4_c651c")]
-position = Vector2(257, 644)
+[node name="Node2D" parent="." unique_id=1674007149 instance=ExtResource("3_c651c")]
+position = Vector2(283, 597)
+
+[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1112647586]
+position = Vector2(-6, -105)
+gizmo_extents = 200.0
+script = ExtResource("4_c651c")

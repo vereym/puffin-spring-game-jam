@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	pass
+	$Node2D/Marker2D.reparent($Node2D/Torso)
 
 
 func _process(_delta):
