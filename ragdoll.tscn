@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://b3s3ym1gjdyh7"]
+
+[ext_resource type="Texture2D" uid="uid://b8jfdpb6ddyh5" path="res://assets/playerBody/Torso.png" id="1_i0bs4"]
+[ext_resource type="Script" uid="uid://b4e00acxt08wx" path="res://main/player/player_controller.gd" id="1_xqnmy"]
+[ext_resource type="Texture2D" uid="uid://nhax32dyi7qn" path="res://assets/playerBody/Bein.png" id="2_uytnn"]
+[ext_resource type="Texture2D" uid="uid://c487rs4a7mo5f" path="res://assets/playerBody/Bein2.png" id="3_uytnn"]
+[ext_resource type="Texture2D" uid="uid://cxugfc8pn6vl3" path="res://assets/playerBody/Armr1.png" id="4_ye125"]
+[ext_resource type="Texture2D" uid="uid://ps432b68rpsl" path="res://assets/playerBody/Arml1.png" id="5_tvtuo"]
+[ext_resource type="Texture2D" uid="uid://cdav833yfsj5m" path="res://assets/playerBody/Armr2.png" id="5_yj41e"]
+[ext_resource type="Texture2D" uid="uid://b2ht8qr5xgk8i" path="res://assets/playerBody/Arml2.png" id="6_rftd3"]
+[ext_resource type="Texture2D" uid="uid://dcg1ubyyj37co" path="res://assets/playerBody/Bürzel.png" id="9_nwi7f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ye125"]
+radius = 50.0
+height = 272.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvtuo"]
+height = 84.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yj41e"]
+height = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rftd3"]
+radius = 18.008377
+height = 93.02697
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwi7f"]
+radius = 18.008377
+height = 98.660324
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_410w6"]
+radius = 18.008377
+height = 98.660324
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqnmy"]
+radius = 18.008377
+height = 119.57347
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lislp"]
+height = 48.164703
+
+[node name="Node2D" type="Node2D" unique_id=1674007149]
+
+[node name="Torso" type="RigidBody2D" parent="." unique_id=16457439]
+script = ExtResource("1_xqnmy")
+
+[node name="Camera2D" type="Camera2D" parent="Torso" unique_id=242584100]
+position = Vector2(-1, -9)
+
+[node name="Torso" type="Sprite2D" parent="Torso" unique_id=453898488]
+z_index = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_i0bs4")
+
+[node name="Hip1" type="PinJoint2D" parent="Torso" unique_id=1830090447]
+position = Vector2(-10, -23)
+node_a = NodePath("..")
+node_b = NodePath("../../Leg1")
+
+[node name="Hip2" type="PinJoint2D" parent="Torso" unique_id=998870227]
+position = Vector2(-36, -32)
+node_a = NodePath("..")
+node_b = NodePath("../../Leg2")
+
+[node name="Shoulder1" type="PinJoint2D" parent="Torso" unique_id=555254725]
+position = Vector2(19, -140)
+node_a = NodePath("../../Arm1")
+node_b = NodePath("..")
+
+[node name="Shoulder2" type="PinJoint2D" parent="Torso" unique_id=2079429043]
+position = Vector2(-42, -128)
+node_a = NodePath("../../Arm2")
+node_b = NodePath("..")
+
+[node name="Tailjoint" type="PinJoint2D" parent="Torso" unique_id=863484910]
+position = Vector2(-40, -33)
+node_a = NodePath("../../Tail")
+node_b = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso" unique_id=901073059]
+position = Vector2(-16, -137)
+shape = SubResource("CapsuleShape2D_ye125")
+
+[node name="Leg1" type="RigidBody2D" parent="." unique_id=1624334647]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg1" unique_id=1451416186]
+position = Vector2(-8, 11)
+shape = SubResource("CapsuleShape2D_tvtuo")
+
+[node name="Bein" type="Sprite2D" parent="Leg1" unique_id=1380498431]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_uytnn")
+offset = Vector2(1220, -940)
+
+[node name="Knee1" type="PinJoint2D" parent="Leg1" unique_id=1847050616]
+position = Vector2(-2, 43)
+node_a = NodePath("../../LowerLeg1")
+node_b = NodePath("..")
+
+[node name="Leg2" type="RigidBody2D" parent="." unique_id=709265127]
+z_index = 2
+position = Vector2(-24, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg2" unique_id=882327429]
+position = Vector2(-8, 11)
+shape = SubResource("CapsuleShape2D_tvtuo")
+
+[node name="Bein" type="Sprite2D" parent="Leg2" unique_id=198710397]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_uytnn")
+offset = Vector2(1220, -940)
+
+[node name="Knee2" type="PinJoint2D" parent="Leg2" unique_id=1575763359]
+position = Vector2(-2, 45)
+node_a = NodePath("../../LowerLeg2")
+node_b = NodePath("..")
+angular_limit_enabled = true
+
+[node name="LowerLeg2" type="RigidBody2D" parent="." unique_id=1174599411]
+z_index = 2
+position = Vector2(-24, 62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLeg2" unique_id=2022895793]
+position = Vector2(10, 10)
+rotation = -0.46479025
+shape = SubResource("CapsuleShape2D_yj41e")
+
+[node name="Bein" type="Sprite2D" parent="LowerLeg2" unique_id=1610158316]
+z_index = 1
+position = Vector2(23.999998, -63.999996)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_uytnn")
+offset = Vector2(1220, -940)
+
+[node name="Arm1" type="RigidBody2D" parent="." unique_id=1075601043]
+z_index = 2
+position = Vector2(72, -136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm1" unique_id=213937047]
+position = Vector2(-14, 11)
+rotation = -1.1112354
+shape = SubResource("CapsuleShape2D_rftd3")
+
+[node name="Arm1" type="Sprite2D" parent="Arm1" unique_id=1505591808]
+z_index = -1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ye125")
+offset = Vector2(-610, 1260)
+
+[node name="Elbow1" type="PinJoint2D" parent="Arm1" unique_id=1315663345]
+position = Vector2(21, 24)
+node_a = NodePath("..")
+node_b = NodePath("../../Wingtip1")
+
+[node name="Wingtip1" type="RigidBody2D" parent="." unique_id=1502834547]
+z_index = 2
+position = Vector2(140, -105)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wingtip1" unique_id=1932168694]
+position = Vector2(-16, -22)
+rotation = -2.1351314
+shape = SubResource("CapsuleShape2D_nwi7f")
+
+[node name="Arm1" type="Sprite2D" parent="Wingtip1" unique_id=1461922015]
+z_index = -1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_yj41e")
+offset = Vector2(-1230, 1000)
+
+[node name="Wingtip2" type="RigidBody2D" parent="." unique_id=324115040]
+z_index = 2
+position = Vector2(-95, -51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wingtip2" unique_id=1372254518]
+position = Vector2(-31, -43)
+rotation = -0.69063973
+shape = SubResource("CapsuleShape2D_410w6")
+
+[node name="Arm1" type="Sprite2D" parent="Wingtip2" unique_id=1814004795]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_rftd3")
+offset = Vector2(890, 450)
+
+[node name="Arm2" type="RigidBody2D" parent="." unique_id=334104405]
+z_index = 2
+position = Vector2(60, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm2" unique_id=905390084]
+z_index = 1
+position = Vector2(-137, 31.999992)
+rotation = -2.2691948
+shape = SubResource("CapsuleShape2D_xqnmy")
+
+[node name="Arm1" type="Sprite2D" parent="Arm2" unique_id=416312286]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_tvtuo")
+offset = Vector2(-610, 1260)
+
+[node name="Elbow2" type="PinJoint2D" parent="Arm2" unique_id=1930641784]
+position = Vector2(-167, 56)
+node_a = NodePath("..")
+node_b = NodePath("../../Wingtip2")
+
+[node name="LowerLeg1" type="RigidBody2D" parent="." unique_id=355838580]
+z_index = 1
+position = Vector2(1, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLeg1" unique_id=27959331]
+position = Vector2(10, 10)
+rotation = -0.46479025
+shape = SubResource("CapsuleShape2D_yj41e")
+
+[node name="Bein" type="Sprite2D" parent="LowerLeg1" unique_id=264167231]
+z_index = 1
+position = Vector2(23.999998, -63.999996)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_uytnn")
+offset = Vector2(1220, -940)
+
+[node name="Tail" type="RigidBody2D" parent="." unique_id=277323061]
+position = Vector2(-48, -42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail" unique_id=277739726]
+position = Vector2(-6, 20)
+rotation = 1.015218
+shape = SubResource("CapsuleShape2D_lislp")
+
+[node name="Bein" type="Sprite2D" parent="Tail" unique_id=437685413]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_nwi7f")
+offset = Vector2(500, 360)

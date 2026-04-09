@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var force = 1000
+var force = 10000
 
 func _ready():
 	can_sleep = false

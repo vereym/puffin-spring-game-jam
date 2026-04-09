@@ -1,51 +1,94 @@
 [gd_scene format=3 uid="uid://dwll54vvy1plm"]
 
 [ext_resource type="Script" uid="uid://b4e00acxt08wx" path="res://main/player/player_controller.gd" id="1_howr1"]
-[ext_resource type="Texture2D" uid="uid://g203gboxg8db" path="res://icon.svg" id="1_vuxkg"]
+[ext_resource type="Texture2D" uid="uid://b8jfdpb6ddyh5" path="res://assets/playerBody/Torso.png" id="2_howr1"]
+[ext_resource type="Texture2D" uid="uid://nhax32dyi7qn" path="res://assets/playerBody/Bein.png" id="3_4bbr4"]
+[ext_resource type="Texture2D" uid="uid://dcg1ubyyj37co" path="res://assets/playerBody/Bürzel.png" id="4_l6plr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c651c"]
-size = Vector2(111, 113)
+size = Vector2(96, 155)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_howr1"]
-radius = 23.0
-height = 72.0
+radius = 9.0
+height = 82.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssv3l"]
-radius = 23.0
-height = 72.0
+radius = 9.0
+height = 78.0
 
-[node name="Player" type="RigidBody2D" unique_id=1274872764]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f8m1i"]
+radius = 10.659109
+height = 36.198322
+
+[node name="Node2D" type="Node2D" unique_id=283211764]
+
+[node name="Player" type="RigidBody2D" parent="." unique_id=1274872764]
+position = Vector2(-46, -161)
 script = ExtResource("1_howr1")
 
-[node name="PlayerIcon" type="Sprite2D" parent="." unique_id=1777796622]
-texture = ExtResource("1_vuxkg")
+[node name="PlayerIcon" type="Sprite2D" parent="Player" unique_id=1777796622]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_howr1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491834966]
-position = Vector2(0.5, 5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1491834966]
+position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_c651c")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1238370246]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1238370246]
 
-[node name="RightPinJoint2D" type="PinJoint2D" parent="." unique_id=555898328]
-position = Vector2(46, 50)
-node_a = NodePath("..")
-node_b = NodePath("../right")
+[node name="Node" type="Node" parent="." unique_id=344813092]
+
+[node name="leftHip" type="PinJoint2D" parent="Node" unique_id=555898328]
+position = Vector2(-63, -74)
+node_a = NodePath("../../Player")
+node_b = NodePath("../../leftThigh")
 motor_enabled = true
 
-[node name="LeftPinJoint2D" type="PinJoint2D" parent="." unique_id=1670499781]
-position = Vector2(-48, 50)
-node_a = NodePath("..")
-node_b = NodePath("../left")
+[node name="rightHip" type="PinJoint2D" parent="Node" unique_id=1670499781]
+position = Vector2(-24, -77)
+node_a = NodePath("../../Player")
+node_b = NodePath("../../rightThigh")
 motor_enabled = true
 
-[node name="right" type="RigidBody2D" parent="." unique_id=960504133]
-position = Vector2(52, 72)
+[node name="tailJoint" type="PinJoint2D" parent="Node" unique_id=415338190]
+position = Vector2(-86, -87)
+node_a = NodePath("../../tail")
+node_b = NodePath("../../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1016644315]
+[node name="leftThigh" type="RigidBody2D" parent="." unique_id=960504133]
+position = Vector2(19, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftThigh" unique_id=1016644315]
+position = Vector2(-41, -36)
 shape = SubResource("CapsuleShape2D_howr1")
 
-[node name="left" type="RigidBody2D" parent="." unique_id=197100901]
-position = Vector2(-53, 73)
+[node name="Sprite2D" type="Sprite2D" parent="leftThigh" unique_id=993325354]
+z_index = -1
+position = Vector2(88.99999, -138)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_4bbr4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="left" unique_id=662063300]
+[node name="rightThigh" type="RigidBody2D" parent="." unique_id=197100901]
+position = Vector2(-104, 2)
+
+[node name="Sprite2D2" type="Sprite2D" parent="rightThigh" unique_id=1448374730]
+position = Vector2(171.695, -146.29)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_4bbr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightThigh" unique_id=662063300]
+position = Vector2(42, -47)
 shape = SubResource("CapsuleShape2D_ssv3l")
+
+[node name="tail" type="RigidBody2D" parent="." unique_id=99206126]
+position = Vector2(-35, -69)
+
+[node name="Sprite2D" type="Sprite2D" parent="tail" unique_id=427476309]
+z_index = -1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_l6plr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tail" unique_id=846100335]
+position = Vector2(-63, -12.999998)
+rotation = 1.0036912
+shape = SubResource("CapsuleShape2D_f8m1i")
