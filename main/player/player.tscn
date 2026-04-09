@@ -6,6 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c651c"]
 size = Vector2(111, 113)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_howr1"]
+radius = 23.0
+height = 72.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssv3l"]
+radius = 23.0
+height = 72.0
+
 [node name="Player" type="RigidBody2D" unique_id=1274872764]
 script = ExtResource("1_howr1")
 
@@ -17,3 +25,27 @@ position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_c651c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1238370246]
+
+[node name="RightPinJoint2D" type="PinJoint2D" parent="." unique_id=555898328]
+position = Vector2(46, 50)
+node_a = NodePath("..")
+node_b = NodePath("../right")
+motor_enabled = true
+
+[node name="LeftPinJoint2D" type="PinJoint2D" parent="." unique_id=1670499781]
+position = Vector2(-48, 50)
+node_a = NodePath("..")
+node_b = NodePath("../left")
+motor_enabled = true
+
+[node name="right" type="RigidBody2D" parent="." unique_id=960504133]
+position = Vector2(52, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1016644315]
+shape = SubResource("CapsuleShape2D_howr1")
+
+[node name="left" type="RigidBody2D" parent="." unique_id=197100901]
+position = Vector2(-53, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left" unique_id=662063300]
+shape = SubResource("CapsuleShape2D_ssv3l")

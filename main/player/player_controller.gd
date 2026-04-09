@@ -10,3 +10,6 @@ func _integrate_forces(state):
 		state.apply_force(Vector2.LEFT * force)
 	elif Input.is_action_pressed("right"):
 		state.apply_force(Vector2.RIGHT * force)
+
+# func _physics_process(delta: float) -> void:
+# 	$RightPinJoint2D.transform

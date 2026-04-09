@@ -16,7 +16,7 @@ normal = Vector2(1, 0)
 distance = -557.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwkvk"]
-size = Vector2(416, 69)
+size = Vector2(416, 82)
 
 [node name="MainController" type="Node" unique_id=857405349]
 script = ExtResource("1_53q0u")
@@ -24,11 +24,12 @@ script = ExtResource("1_53q0u")
 [node name="SwimmingPool" type="Node2D" parent="." unique_id=1747023405]
 
 [node name="Background" type="Sprite2D" parent="SwimmingPool" unique_id=330199885]
-position = Vector2(585.875, 1978.3906)
-scale = Vector2(2.7409704, 2.7409704)
+position = Vector2(585.875, 2351.6675)
+scale = Vector2(2.7409704, 3.2540655)
 texture = ExtResource("2_xwkvk")
 
 [node name="WorldBoundary" type="StaticBody2D" parent="SwimmingPool" unique_id=1253131135]
+position = Vector2(0, 749)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=1907589114]
 position = Vector2(569, 3845)
@@ -46,9 +47,8 @@ shape = SubResource("WorldBoundaryShape2D_3wy1v")
 position = Vector2(324, 543)
 
 [node name="Tower" type="StaticBody2D" parent="SwimmingPool" unique_id=181180395]
-visible = false
-position = Vector2(9, 607)
+position = Vector2(9, 722)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/Tower" unique_id=1477726587]
-position = Vector2(208, 34.5)
+position = Vector2(208, 41)
 shape = SubResource("RectangleShape2D_xwkvk")
