@@ -1,60 +1,20 @@
 [gd_scene format=3 uid="uid://cfxqy72key3id"]
 
 [ext_resource type="Script" uid="uid://tceb7n5r8p0c" path="res://main/main_controller.gd" id="1_53q0u"]
-[ext_resource type="Texture2D" uid="uid://dsot86bb0tt6v" path="res://assets/background.png" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://ch8mkwlvt4pgd" path="res://main/environment/environment.tscn" id="2_c651c"]
 [ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://ragdoll.tscn" id="3_c651c"]
 [ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="4_c651c"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwkvk"]
-distance = -91.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c651c"]
-normal = Vector2(-1, 0)
-distance = -592.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3wy1v"]
-normal = Vector2(1, 0)
-distance = -557.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwkvk"]
-size = Vector2(416, 82)
 
 [node name="MainController" type="Node" unique_id=857405349]
 script = ExtResource("1_53q0u")
 
-[node name="SwimmingPool" type="Node2D" parent="." unique_id=1747023405]
+[node name="SwimmingPool" parent="." unique_id=925461628 instance=ExtResource("2_c651c")]
+position = Vector2(1784, 1573)
 
-[node name="Background" type="Sprite2D" parent="SwimmingPool" unique_id=330199885]
-position = Vector2(585.875, 2351.6675)
-scale = Vector2(2.7409704, 3.2540655)
-texture = ExtResource("2_xwkvk")
-
-[node name="WorldBoundary" type="StaticBody2D" parent="SwimmingPool" unique_id=1253131135]
-position = Vector2(0, 749)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=1907589114]
-position = Vector2(569, 3845)
-shape = SubResource("WorldBoundaryShape2D_xwkvk")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=2036579926]
-position = Vector2(569, 3845)
-shape = SubResource("WorldBoundaryShape2D_c651c")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="SwimmingPool/WorldBoundary" unique_id=1937639759]
-position = Vector2(569, 3845)
-shape = SubResource("WorldBoundaryShape2D_3wy1v")
-
-[node name="Tower" type="StaticBody2D" parent="SwimmingPool" unique_id=181180395]
-position = Vector2(9, 722)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwimmingPool/Tower" unique_id=1477726587]
-position = Vector2(208, 41)
-shape = SubResource("RectangleShape2D_xwkvk")
-
-[node name="Node2D" parent="." unique_id=1674007149 instance=ExtResource("3_c651c")]
+[node name="Player" parent="." unique_id=1674007149 instance=ExtResource("3_c651c")]
 position = Vector2(283, 597)
 
-[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1112647586]
+[node name="Marker2D" type="Marker2D" parent="Player" unique_id=1112647586]
 position = Vector2(-6, -105)
 gizmo_extents = 200.0
 script = ExtResource("4_c651c")

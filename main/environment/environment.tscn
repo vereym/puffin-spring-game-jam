@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ch8mkwlvt4pgd"]
+
+[ext_resource type="Texture2D" uid="uid://4tyc1tmcje8n" path="res://assets/environment/Hg.png" id="1_lcuaj"]
+[ext_resource type="Texture2D" uid="uid://626e7x0kghx7" path="res://assets/environment/Boden.png" id="2_ekfqy"]
+[ext_resource type="Texture2D" uid="uid://b31ir33y68h2a" path="res://assets/environment/Wasserganz.png" id="3_b66bt"]
+[ext_resource type="Texture2D" uid="uid://byhcsgvo025c3" path="res://assets/environment/Wasserhalb.png" id="4_ciqv8"]
+[ext_resource type="Texture2D" uid="uid://cy7iad2gj4mcs" path="res://assets/environment/Turm.png" id="5_un6eb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwkvk"]
+distance = -91.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c651c"]
+normal = Vector2(-1, 0)
+distance = -2630.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3wy1v"]
+normal = Vector2(1, 0)
+distance = -2376.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwkvk"]
+size = Vector2(900, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuaj"]
+size = Vector2(539, 3153)
+
+[node name="SwimmingPool" type="Node2D" unique_id=925461628]
+
+[node name="Hg" type="Sprite2D" parent="." unique_id=1504481855]
+texture = ExtResource("1_lcuaj")
+
+[node name="Boden" type="Sprite2D" parent="." unique_id=297801795]
+texture = ExtResource("2_ekfqy")
+
+[node name="Wasserganz" type="Sprite2D" parent="." unique_id=1577874566]
+texture = ExtResource("3_b66bt")
+
+[node name="Wasserhalb" type="Sprite2D" parent="." unique_id=1472200393]
+z_index = 3
+texture = ExtResource("4_ciqv8")
+
+[node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1976981462]
+position = Vector2(-760, -1658)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=292477299]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_xwkvk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBoundary" unique_id=418207261]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_c651c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBoundary" unique_id=1328972027]
+position = Vector2(569, 3845)
+shape = SubResource("WorldBoundaryShape2D_3wy1v")
+
+[node name="Tower" type="StaticBody2D" parent="." unique_id=676898323]
+position = Vector2(9, 722)
+
+[node name="Turm" type="Sprite2D" parent="Tower" unique_id=497874802]
+position = Vector2(-9, -722)
+texture = ExtResource("5_un6eb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" unique_id=1746771775]
+position = Vector2(-1810, -1507)
+shape = SubResource("RectangleShape2D_xwkvk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower" unique_id=1142559125]
+position = Vector2(-2540.5, -481.5)
+shape = SubResource("RectangleShape2D_lcuaj")
