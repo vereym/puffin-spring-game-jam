@@ -73,7 +73,7 @@ node_a = NodePath("../../Arm2")
 node_b = NodePath("..")
 
 [node name="Tailjoint" type="PinJoint2D" parent="Torso" unique_id=863484910]
-position = Vector2(-40, -33)
+position = Vector2(-34, -40)
 node_a = NodePath("../../Tail")
 node_b = NodePath("..")
 
@@ -94,9 +94,11 @@ texture = ExtResource("2_uytnn")
 offset = Vector2(1220, -940)
 
 [node name="Knee1" type="PinJoint2D" parent="Leg1" unique_id=1847050616]
-position = Vector2(-2, 43)
+position = Vector2(2, 42)
 node_a = NodePath("../../LowerLeg1")
 node_b = NodePath("..")
+angular_limit_lower = -1.8221238
+angular_limit_upper = 0.040142573
 
 [node name="Leg2" type="RigidBody2D" parent="." unique_id=709265127]
 z_index = 2
@@ -113,14 +115,16 @@ texture = ExtResource("2_uytnn")
 offset = Vector2(1220, -940)
 
 [node name="Knee2" type="PinJoint2D" parent="Leg2" unique_id=1575763359]
-position = Vector2(-2, 45)
+position = Vector2(2, 44)
 node_a = NodePath("../../LowerLeg2")
 node_b = NodePath("..")
-angular_limit_enabled = true
+angular_limit_lower = -1.8221238
+angular_limit_upper = 0.040142573
 
 [node name="LowerLeg2" type="RigidBody2D" parent="." unique_id=1174599411]
 z_index = 2
-position = Vector2(-24, 62)
+position = Vector2(-36, 59.999996)
+rotation = 0.5268838
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLeg2" unique_id=2022895793]
 position = Vector2(10, 10)
@@ -136,7 +140,8 @@ offset = Vector2(1220, -940)
 
 [node name="Arm1" type="RigidBody2D" parent="." unique_id=1075601043]
 z_index = 2
-position = Vector2(72, -136)
+position = Vector2(67.00001, -159)
+rotation = -0.47933325
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm1" unique_id=213937047]
 position = Vector2(-14, 11)
@@ -156,7 +161,8 @@ node_b = NodePath("../../Wingtip1")
 
 [node name="Wingtip1" type="RigidBody2D" parent="." unique_id=1502834547]
 z_index = 2
-position = Vector2(140, -105)
+position = Vector2(136, -118)
+rotation = 0.5559115
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wingtip1" unique_id=1932168694]
 position = Vector2(-16, -22)
@@ -171,7 +177,8 @@ offset = Vector2(-1230, 1000)
 
 [node name="Wingtip2" type="RigidBody2D" parent="." unique_id=324115040]
 z_index = 2
-position = Vector2(-95, -51)
+position = Vector2(-116, -124)
+rotation = -0.8478381
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wingtip2" unique_id=1372254518]
 position = Vector2(-31, -43)
@@ -186,7 +193,8 @@ offset = Vector2(890, 450)
 
 [node name="Arm2" type="RigidBody2D" parent="." unique_id=334104405]
 z_index = 2
-position = Vector2(60, -128)
+position = Vector2(30.000004, -68)
+rotation = 0.6662667
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm2" unique_id=905390084]
 z_index = 1
@@ -206,7 +214,8 @@ node_b = NodePath("../../Wingtip2")
 
 [node name="LowerLeg1" type="RigidBody2D" parent="." unique_id=355838580]
 z_index = 1
-position = Vector2(1, 64)
+position = Vector2(-8, 63)
+rotation = 0.4094223
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLeg1" unique_id=27959331]
 position = Vector2(10, 10)
@@ -221,7 +230,7 @@ texture = ExtResource("3_uytnn")
 offset = Vector2(1220, -940)
 
 [node name="Tail" type="RigidBody2D" parent="." unique_id=277323061]
-position = Vector2(-48, -42)
+position = Vector2(-45, -42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tail" unique_id=277739726]
 position = Vector2(-6, 20)
