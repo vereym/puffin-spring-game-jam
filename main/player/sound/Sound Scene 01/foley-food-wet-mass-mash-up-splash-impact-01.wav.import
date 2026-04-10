@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5lapc3gr5wse"
+path="res://.godot/imported/foley-food-wet-mass-mash-up-splash-impact-01.wav-bb1d8f31847f175c6a229b334fd921c1.sample"
+
+[deps]
+
+source_file="res://main/player/sound/Sound Scene 01/foley-food-wet-mass-mash-up-splash-impact-01.wav"
+dest_files=["res://.godot/imported/foley-food-wet-mass-mash-up-splash-impact-01.wav-bb1d8f31847f175c6a229b334fd921c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

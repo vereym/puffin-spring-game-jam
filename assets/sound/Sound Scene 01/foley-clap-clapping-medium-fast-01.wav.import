@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fss4kttjfgg"
+path="res://.godot/imported/foley-clap-clapping-medium-fast-01.wav-1a3e8b8046c9362f2dad4fa5db23625c.sample"
+
+[deps]
+
+source_file="res://assets/sound/Sound Scene 01/foley-clap-clapping-medium-fast-01.wav"
+dest_files=["res://.godot/imported/foley-clap-clapping-medium-fast-01.wav-1a3e8b8046c9362f2dad4fa5db23625c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

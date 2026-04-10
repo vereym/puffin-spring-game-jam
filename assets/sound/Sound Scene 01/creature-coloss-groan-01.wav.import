@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0dc25ni7b8mq"
+path="res://.godot/imported/creature-coloss-groan-01.wav-14c20f4bf79b505dd94768e0cc5a872b.sample"
+
+[deps]
+
+source_file="res://assets/sound/Sound Scene 01/creature-coloss-groan-01.wav"
+dest_files=["res://.godot/imported/creature-coloss-groan-01.wav-14c20f4bf79b505dd94768e0cc5a872b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

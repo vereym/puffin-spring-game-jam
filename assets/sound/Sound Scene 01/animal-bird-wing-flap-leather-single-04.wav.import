@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxexbrmpuy4cn"
+path="res://.godot/imported/animal-bird-wing-flap-leather-single-04.wav-4e262b93c5f5eddae3a2d2aef16a84b9.sample"
+
+[deps]
+
+source_file="res://assets/sound/Sound Scene 01/animal-bird-wing-flap-leather-single-04.wav"
+dest_files=["res://.godot/imported/animal-bird-wing-flap-leather-single-04.wav-4e262b93c5f5eddae3a2d2aef16a84b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

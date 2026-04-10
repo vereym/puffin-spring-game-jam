@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tmqtxf17gr3y"
+path="res://.godot/imported/kf013719-as-it-was-before.wav-fea2723c3d969185e1ab44b1c088414a.sample"
+
+[deps]
+
+source_file="res://main/player/music/Music Scene 01/kf013719-as-it-was-before.wav"
+dest_files=["res://.godot/imported/kf013719-as-it-was-before.wav-fea2723c3d969185e1ab44b1c088414a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
