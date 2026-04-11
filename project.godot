@@ -68,6 +68,7 @@ p-key={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=98.0
 
 [rendering]
 

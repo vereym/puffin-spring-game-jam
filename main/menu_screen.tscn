@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://dt1fnfui2cumg"]
+
+[ext_resource type="AudioStream" uid="uid://cdmodpydybiul" path="res://assets/music/kf015605-sick-tricks.wav" id="1_eo6s2"]
+[ext_resource type="Theme" uid="uid://dw0t5fgxxqtdg" path="res://main/UI/puffin_theme.tres" id="1_tuusc"]
+[ext_resource type="Texture2D" uid="uid://dqeuqmkldhro2" path="res://assets/Logomitvibe.png" id="2_lfpg5"]
+[ext_resource type="Script" uid="uid://cdftj2jrgsr1c" path="res://main/menu_screen.gd" id="2_ylmtb"]
+[ext_resource type="Texture2D" uid="uid://btens12rvf4ow" path="res://assets/Buttons/Start.png" id="4_68vtp"]
+[ext_resource type="Texture2D" uid="uid://v2isv3oill8g" path="res://assets/Buttons/About.png" id="6_lfpg5"]
+[ext_resource type="Texture2D" uid="uid://emufueuwv2di" path="res://assets/Buttons/Settings.png" id="6_ugwo0"]
+[ext_resource type="Texture2D" uid="uid://c46mdd7k2m0be" path="res://assets/Buttons/Quit.png" id="8_x55ar"]
+[ext_resource type="Texture2D" uid="uid://dm3hp2uafawmv" path="res://assets/Buttons/Music.png" id="8_xwup3"]
+[ext_resource type="Texture2D" uid="uid://c7gd5cp8qic88" path="res://assets/Buttons/Sound.png" id="9_eo6s2"]
+[ext_resource type="Texture2D" uid="uid://dv1s28etfh56g" path="res://assets/Buttons/Back.png" id="10_ugwo0"]
+[ext_resource type="AudioStream" uid="uid://dfg3thj2rjko8" path="res://assets/sound/sound-scene-01/ui-button-joystick-01.wav" id="12_ugwo0"]
+
+[sub_resource type="Theme" id="Theme_68vtp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g50d1"]
+
+[sub_resource type="Theme" id="Theme_lfpg5"]
+VBoxContainer/styles/normal = SubResource("StyleBoxEmpty_g50d1")
+
+[sub_resource type="Theme" id="Theme_qjfvo"]
+
+[sub_resource type="Theme" id="Theme_ugwo0"]
+
+[sub_resource type="Theme" id="Theme_eo6s2"]
+
+[sub_resource type="Theme" id="Theme_xwup3"]
+
+[node name="Control" type="Control" unique_id=1814558439]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1992028491]
+position = Vector2(251, -141)
+stream = ExtResource("1_eo6s2")
+autoplay = true
+bus = &"Music"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=223862788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_68vtp")
+script = ExtResource("2_ylmtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer" unique_id=2025091711]
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("2_lfpg5")
+offset = Vector2(0, 400)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1088598908]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1989226973]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme = ExtResource("1_tuusc")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1699903465]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme = SubResource("Theme_lfpg5")
+
+[node name="Start" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=2129509491]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_right = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Quit")
+theme = SubResource("Theme_qjfvo")
+texture_normal = ExtResource("4_68vtp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=946705823]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Start")
+focus_neighbor_right = NodePath("../About")
+focus_next = NodePath("../About")
+focus_previous = NodePath("../Start")
+texture_normal = ExtResource("6_ugwo0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="About" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1975045779]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_right = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Settings")
+texture_normal = ExtResource("6_lfpg5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=2004235136]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_neighbor_left = NodePath("../About")
+focus_neighbor_right = NodePath("../Start")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../About")
+texture_normal = ExtResource("8_x55ar")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Options" type="MarginContainer" parent="." unique_id=2012306353]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 304.0
+offset_top = 76.0
+offset_right = 554.0
+offset_bottom = 326.86
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ugwo0")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=1697644693]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Options/VBoxContainer" unique_id=369217617]
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+theme = SubResource("Theme_eo6s2")
+texture = ExtResource("8_xwup3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer" unique_id=1761942182]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_xwup3")
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Options/VBoxContainer" unique_id=920763366]
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+texture = ExtResource("9_eo6s2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SfxSlider" type="HSlider" parent="Options/VBoxContainer" unique_id=291029042]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_xwup3")
+theme_override_constants/grabber_offset = 0
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="backButton" type="TextureButton" parent="Options/VBoxContainer" unique_id=1305512455]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+texture_normal = ExtResource("10_ugwo0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Clicks" type="AudioStreamPlayer2D" parent="." unique_id=1178230116]
+stream = ExtResource("12_ugwo0")
+bus = &"Sfx"
+
+[node name="about" type="MarginContainer" parent="." unique_id=705094608]
+visible = false
+layout_mode = 0
+offset_left = -562.0
+offset_top = 199.0
+offset_right = -162.0
+offset_bottom = 299.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="about" unique_id=1409948695]
+layout_mode = 2
+text = "Made by Antoni, Hannah and Christian.
+In Hamburg with ❤︎
+
+Music and sounds by WeLoveIndies.com"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/VBoxContainer/Start" to="CenterContainer" method="_on_start_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/PanelContainer/VBoxContainer/Start" to="CenterContainer" method="_on_start_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/Start" to="CenterContainer" method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/Start" to="CenterContainer" method="_on_start_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Start" to="CenterContainer" method="_on_start_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/VBoxContainer/Settings" to="CenterContainer" method="_on_settings_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/PanelContainer/VBoxContainer/Settings" to="CenterContainer" method="_on_settings_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/Settings" to="CenterContainer" method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/Settings" to="CenterContainer" method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Settings" to="CenterContainer" method="_on_settings_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/VBoxContainer/About" to="CenterContainer" method="_on_about_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/PanelContainer/VBoxContainer/About" to="CenterContainer" method="_on_about_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/About" to="CenterContainer" method="_on_about_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/About" to="CenterContainer" method="_on_about_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/About" to="CenterContainer" method="_on_about_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/VBoxContainer/Quit" to="CenterContainer" method="_on_quit_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/PanelContainer/VBoxContainer/Quit" to="CenterContainer" method="_on_quit_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/Quit" to="CenterContainer" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/Quit" to="CenterContainer" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Quit" to="CenterContainer" method="_on_quit_pressed"]
+[connection signal="value_changed" from="Options/VBoxContainer/MusicSlider" to="CenterContainer" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer/SfxSlider" to="CenterContainer" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Options/VBoxContainer/backButton" to="CenterContainer" method="_on_back_button_pressed"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://tceb7n5r8p0c" path="res://main/main_controller.gd" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://ch8mkwlvt4pgd" path="res://main/environment/environment.tscn" id="2_c651c"]
-[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://ragdoll.tscn" id="3_c651c"]
-[ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://main/ragdoll.tscn" id="3_c651c"]
+[ext_resource type="Script" path="res://main/rotation_judge_controller.gd" id="4_c651c"]
 
 [node name="MainController" type="Node" unique_id=857405349]
 script = ExtResource("1_53q0u")
