@@ -18,6 +18,5 @@ func _integrate_forces(state):
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("q-key"):
 		torso.apply_torque(1000000)
-		print("q was pressed")
 	elif Input.is_action_just_pressed("p-key"):
 		torso.apply_torque(-1000000)

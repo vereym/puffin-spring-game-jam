@@ -6,8 +6,8 @@ var last_rotation := global_rotation
 
 var turns := 0
 
-func _process(_delta):
-	print(turns)
+# func _process(_delta):
+# 	print(turns)
 
 func _physics_process(_delta: float) -> void:
 	amount_rotated += angle_difference(last_rotation, global_rotation)
