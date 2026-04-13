@@ -45,7 +45,7 @@ z_index = 4
 polygon = PackedVector2Array(-2453, 2265, -1921, 1752, 1591, 1772, 2302, 2283, 2313, 3046, -2463, 3046)
 
 [node name="Wasserhalb" type="Sprite2D" parent="." unique_id=1472200393]
-z_index = 3
+z_index = 14
 texture = ExtResource("4_ciqv8")
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1976981462]
