@@ -17,3 +17,7 @@ func _on_player_entered_pool():
 	if _player_entered_pool:
 		return
 	_player_entered_pool = true
+
+	var tween := get_tree().create_tween()
+	tween.finished.connect(func (): %Player/Torso/Camera2D.reparent($CameraMarker))
+	tween.tween_property(%Player/Torso/Camera2D, "global_position", $CameraMarker.global_position, 1.0)

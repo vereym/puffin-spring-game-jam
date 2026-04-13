@@ -40,6 +40,7 @@ height = 119.57347
 height = 48.164703
 
 [node name="Node2D" type="Node2D" unique_id=1674007149]
+z_index = 1
 
 [node name="Torso" type="RigidBody2D" parent="." unique_id=16457439]
 script = ExtResource("1_xqnmy")

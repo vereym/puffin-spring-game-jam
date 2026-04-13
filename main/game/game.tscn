@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://becgtoiv1em0f" path="res://assets/judges/IMG_2023.png" id="10_5xupx"]
 [ext_resource type="Script" uid="uid://bodcmjvmktex6" path="res://main/game/rating_controller.gd" id="11_u71ym"]
 [ext_resource type="AudioStream" uid="uid://dploi18cahec4" path="res://assets/music/kf027602-escape-velocity.wav" id="12_yo04u"]
-[ext_resource type="Script" uid="uid://6k0cpjg4m8da" path="res://main/game/audio_stream_player_2d.gd" id="13_5xupx"]
+[ext_resource type="Script" path="res://main/game/audio_stream_player_2d.gd" id="13_5xupx"]
 [ext_resource type="Texture2D" uid="uid://cuaghwv4513y7" path="res://assets/judges/IMG_2009.png" id="13_q786k"]
 [ext_resource type="Texture2D" uid="uid://c4lf0olv0mp2g" path="res://assets/environment/Beckenrand.png" id="18_y4tkr"]
 [ext_resource type="Texture2D" uid="uid://cfwus6lad8ib6" path="res://assets/environment/Mitte.png" id="19_812s6"]
@@ -80,8 +80,9 @@ script = ExtResource("3_ej72j")
 
 [node name="JudgeNumbers" parent="Player/RotationJudge" unique_id=1626556630 instance=ExtResource("5_5pgop")]
 visible = false
+top_level = true
 z_index = 1
-position = Vector2(1336.0001, 1488)
+position = Vector2(1611.0001, 1980)
 rotation = -0.19130242
 scale = Vector2(0.216977, 0.216977)
 
@@ -99,6 +100,8 @@ texture = ExtResource("5_6lqia")
 position = Vector2(2121, 227)
 scale = Vector2(0.413, 0.413)
 sprite_frames = SubResource("SpriteFrames_5pgop")
+frame = 1
+frame_progress = 0.2088448
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=267148136]
 position = Vector2(-1, -99)
@@ -142,6 +145,7 @@ sprite_frames = SubResource("SpriteFrames_812s6")
 
 [node name="JudgeNumbers" parent="PositionJudge" unique_id=408283245 instance=ExtResource("5_5pgop")]
 visible = false
+z_index = 1
 position = Vector2(3362.7207, 527.4859)
 rotation = -0.8518305
 scale = Vector2(0.42078033, 0.42078033)
@@ -156,6 +160,11 @@ max_distance = 20090000.0
 bus = &"Music"
 script = ExtResource("13_5xupx")
 
+[node name="CameraMarker" type="Marker2D" parent="." unique_id=737996340]
+position = Vector2(1545, 2053)
+gizmo_extents = 295.1
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
 [node name="CameraMarker" type="Marker2D" parent="." unique_id=737996340]
 position = Vector2(1539, 2045)
 
