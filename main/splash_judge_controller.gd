@@ -28,7 +28,8 @@ func _on_player_entered_pool():
 	_player_entered_pool = true
 
 	($Sprites as AnimatedSprite2D).frame = 1
-
 	var bounds : Vector2 = get_x_bounds(%Player) if %Player != null else null
 	if bounds != null:
 		rating.emit(bounds.y - bounds.x)
+	$JudgeNumbers.visible = true
+	$JudgeNumbers.signal_number(10*(bounds.y - bounds.x))

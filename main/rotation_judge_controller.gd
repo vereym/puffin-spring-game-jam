@@ -24,6 +24,9 @@ func _on_player_entered_pool():
 	if _player_entered_pool:
 		return
 	_player_entered_pool = true
+	
+	$JudgeNumbers.visible = true
+	$JudgeNumbers.signal_number(turns)
 
 	($Visual/Sprites as AnimatedSprite2D).frame = 1
 

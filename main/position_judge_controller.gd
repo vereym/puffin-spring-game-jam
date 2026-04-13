@@ -29,5 +29,6 @@ func _on_player_entered_pool():
 	var bounds := _polygon_get_rect(pool)
 	var pool_midpoint := pool.global_transform * (bounds.position + bounds.size / 2)
 	var diff = abs(player_pos.x - pool_midpoint.x)
-
+	$JudgeNumbers.visible = true
+	$JudgeNumbers.signal_number(10*(diff))
 	rating.emit(diff)
