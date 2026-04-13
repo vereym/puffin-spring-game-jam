@@ -154,6 +154,8 @@ max_distance = 20090000.0
 bus = &"Music"
 script = ExtResource("13_5xupx")
 
-[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
 [node name="CameraMarker" type="Marker2D" parent="." unique_id=737996340]
-position = Vector2(1539, 2045)
+position = Vector2(1545, 2053)
+gizmo_extents = 295.1
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
