@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://64ob011bdf3l" path="res://main/environment/environment_controller.gd" id="1_ekfqy"]
 [ext_resource type="Texture2D" uid="uid://4tyc1tmcje8n" path="res://assets/environment/Hg.png" id="1_lcuaj"]
 [ext_resource type="Texture2D" uid="uid://626e7x0kghx7" path="res://assets/environment/Boden.png" id="2_ekfqy"]
+[ext_resource type="Texture2D" uid="uid://chreqio4h0dea" path="res://assets/keys/e-key.png" id="2_gi5o5"]
 [ext_resource type="Texture2D" uid="uid://b31ir33y68h2a" path="res://assets/environment/Wasserganz.png" id="3_b66bt"]
+[ext_resource type="Texture2D" uid="uid://up3mxafdquy5" path="res://assets/keys/i-key.png" id="3_rphqs"]
 [ext_resource type="Texture2D" uid="uid://byhcsgvo025c3" path="res://assets/environment/Wasserhalb.png" id="4_ciqv8"]
+[ext_resource type="Texture2D" uid="uid://dcvygsw0jggo2" path="res://assets/keys/o-key.png" id="4_k067m"]
+[ext_resource type="Texture2D" uid="uid://bi3faeinepdi8" path="res://assets/keys/w-key.png" id="5_e356i"]
 [ext_resource type="Texture2D" uid="uid://cy7iad2gj4mcs" path="res://assets/environment/Turm.png" id="5_un6eb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xwkvk"]
@@ -26,6 +30,30 @@ size = Vector2(539, 3153)
 
 [node name="Environment" type="Node2D" unique_id=925461628]
 script = ExtResource("1_ekfqy")
+
+[node name="e-key" type="Sprite2D" parent="." unique_id=303757827]
+z_index = 1
+position = Vector2(-1951.285, -1278)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gi5o5")
+
+[node name="i-key" type="Sprite2D" parent="." unique_id=280157469]
+z_index = 1
+position = Vector2(-1069, -1278)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_rphqs")
+
+[node name="o-key" type="Sprite2D" parent="." unique_id=1936397353]
+z_index = 1
+position = Vector2(-899, -1278)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_k067m")
+
+[node name="w-key" type="Sprite2D" parent="." unique_id=296900538]
+z_index = 1
+position = Vector2(-2114.84, -1278)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_e356i")
 
 [node name="Hg" type="Sprite2D" parent="." unique_id=1504481855]
 texture = ExtResource("1_lcuaj")
