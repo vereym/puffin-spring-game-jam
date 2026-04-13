@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cyg4axg8po0yc"]
+
+[ext_resource type="Script" uid="uid://btbro8amnh7gi" path="res://number_gen.gd" id="1_xgm6q"]
+[ext_resource type="Texture2D" uid="uid://btwx78erd85er" path="res://assets/point_nums/num0.png" id="2_n6g26"]
+[ext_resource type="Texture2D" uid="uid://ciksssqwcmm86" path="res://assets/point_nums/num1.png" id="3_avq7u"]
+
+[node name="JudgeNumbers" type="Node2D" unique_id=1626556630]
+script = ExtResource("1_xgm6q")
+
+[node name="0_part" type="Sprite2D" parent="." unique_id=1837159044]
+position = Vector2(100, 0)
+texture = ExtResource("2_n6g26")
+
+[node name="prefix_part" type="Sprite2D" parent="." unique_id=407505311]
+position = Vector2(-100, 0)
+texture = ExtResource("3_avq7u")
