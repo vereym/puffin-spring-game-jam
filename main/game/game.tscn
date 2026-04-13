@@ -5,7 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://main/ragdoll.tscn" id="2_ux4xf"]
 [ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="3_ej72j"]
 [ext_resource type="Script" uid="uid://cra8j57tpucsi" path="res://main/splash_judge_controller.gd" id="4_en41u"]
+[ext_resource type="Texture2D" uid="uid://bcwldrr6be8gi" path="res://assets/judges/Stuhl.png" id="5_6lqia"]
 [ext_resource type="Script" uid="uid://3cdi5jrqyikb" path="res://main/position_judge_controller.gd" id="5_u7x3r"]
+[ext_resource type="Texture2D" uid="uid://cds514wv82chn" path="res://assets/judges/IMG_2024.png" id="6_u71ym"]
+[ext_resource type="Texture2D" uid="uid://sglm0n1m1kdn" path="res://assets/judges/IMG_2022.png" id="8_yo04u"]
+[ext_resource type="Texture2D" uid="uid://becgtoiv1em0f" path="res://assets/judges/IMG_2023.png" id="10_5xupx"]
+[ext_resource type="Script" uid="uid://bodcmjvmktex6" path="res://main/game/rating_controller.gd" id="11_u71ym"]
 
 [node name="Game" type="Node2D" unique_id=1045205810]
 script = ExtResource("1_ux4xf")
@@ -23,8 +28,50 @@ position = Vector2(-6, -105)
 gizmo_extents = 200.0
 script = ExtResource("3_ej72j")
 
-[node name="SplashJudge" type="Node" parent="." unique_id=1783197990]
+[node name="Visual" type="Node2D" parent="Player/RotationJudge" unique_id=771522710]
+top_level = true
+position = Vector2(416, 1970)
+scale = Vector2(0.51565385, 0.51565385)
+
+[node name="Stuhl2" type="Sprite2D" parent="Player/RotationJudge/Visual" unique_id=2056584245]
+position = Vector2(2170.0605, 950.2497)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_6lqia")
+
+[node name="Img2024" type="Sprite2D" parent="Player/RotationJudge/Visual" unique_id=591174741]
+position = Vector2(2121, 227)
+scale = Vector2(0.413, 0.413)
+texture = ExtResource("6_u71ym")
+
+[node name="SplashJudge" type="Node2D" parent="." unique_id=2091526588]
+position = Vector2(275, 1697)
+scale = Vector2(0.51565385, 0.51565385)
 script = ExtResource("4_en41u")
 
-[node name="PositionJudge" type="Node" parent="." unique_id=1081314777]
+[node name="Stuhl" type="Sprite2D" parent="SplashJudge" unique_id=195107002]
+position = Vector2(1144.1785, 1501.007)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_6lqia")
+
+[node name="Img2022" type="Sprite2D" parent="SplashJudge" unique_id=2069465144]
+position = Vector2(1308, 776)
+scale = Vector2(0.4130701, 0.4130701)
+texture = ExtResource("8_yo04u")
+
+[node name="PositionJudge" type="Node2D" parent="." unique_id=1992753232]
+position = Vector2(275, 1724)
+scale = Vector2(0.51565385, 0.51565385)
 script = ExtResource("5_u7x3r")
+
+[node name="Stuhl3" type="Sprite2D" parent="PositionJudge" unique_id=1174603922]
+position = Vector2(3659, 1437.0105)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_6lqia")
+
+[node name="Img2023" type="Sprite2D" parent="PositionJudge" unique_id=2117395123]
+position = Vector2(3586, 687)
+scale = Vector2(0.413, 0.413)
+texture = ExtResource("10_5xupx")
+
+[node name="Rating" type="Node" parent="." unique_id=1080299925]
+script = ExtResource("11_u71ym")
