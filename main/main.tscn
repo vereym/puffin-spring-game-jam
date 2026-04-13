@@ -1,30 +1,9 @@
 [gd_scene format=3 uid="uid://cfxqy72key3id"]
 
 [ext_resource type="Script" uid="uid://tceb7n5r8p0c" path="res://main/main_controller.gd" id="1_53q0u"]
-[ext_resource type="PackedScene" uid="uid://ch8mkwlvt4pgd" path="res://main/environment/environment.tscn" id="2_c651c"]
-[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://main/ragdoll.tscn" id="3_c651c"]
-[ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="4_c651c"]
-[ext_resource type="Script" uid="uid://cra8j57tpucsi" path="res://main/splash_judge_controller.gd" id="5_3wy1v"]
-[ext_resource type="Script" uid="uid://3cdi5jrqyikb" path="res://main/position_judge_controller.gd" id="6_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://dt1fnfui2cumg" path="res://main/menu_screen.tscn" id="2_pjrb6"]
 
 [node name="MainController" type="Node" unique_id=857405349]
 script = ExtResource("1_53q0u")
 
-[node name="Environment" parent="." unique_id=925461628 instance=ExtResource("2_c651c")]
-unique_name_in_owner = true
-position = Vector2(1784, 1573)
-
-[node name="Player" parent="." unique_id=1674007149 instance=ExtResource("3_c651c")]
-unique_name_in_owner = true
-position = Vector2(283, 597)
-
-[node name="RotationJudge" type="Marker2D" parent="Player" unique_id=1112647586]
-position = Vector2(-6, -105)
-gizmo_extents = 200.0
-script = ExtResource("4_c651c")
-
-[node name="SplashJudge" type="Node" parent="." unique_id=1935047439]
-script = ExtResource("5_3wy1v")
-
-[node name="PositionJudge" type="Node" parent="." unique_id=1505640498]
-script = ExtResource("6_kfbq2")
+[node name="Control" parent="." unique_id=1814558439 instance=ExtResource("2_pjrb6")]

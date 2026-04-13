@@ -1,5 +1,5 @@
 extends CenterContainer
-var game_scene = preload("res://main/main.tscn").instantiate()
+var game_scene := preload("res://main/game/game.tscn").instantiate()
 @onready var settings_button: TextureButton = $"../MarginContainer/PanelContainer/VBoxContainer/Settings"
 @onready var about_button: TextureButton = $"../MarginContainer/PanelContainer/VBoxContainer/About"
 @onready var quit_button: TextureButton = $"../MarginContainer/PanelContainer/VBoxContainer/Quit"

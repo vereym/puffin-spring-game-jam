@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dot3v8r7f2x1i"]
+
+[ext_resource type="PackedScene" uid="uid://ch8mkwlvt4pgd" path="res://main/environment/environment.tscn" id="1_458dk"]
+[ext_resource type="Script" uid="uid://cm7ibqjp2od4k" path="res://main/game/game_controller.gd" id="1_ux4xf"]
+[ext_resource type="PackedScene" uid="uid://b3s3ym1gjdyh7" path="res://main/ragdoll.tscn" id="2_ux4xf"]
+[ext_resource type="Script" uid="uid://xrsp5428wpf0" path="res://main/rotation_judge_controller.gd" id="3_ej72j"]
+[ext_resource type="Script" uid="uid://cra8j57tpucsi" path="res://main/splash_judge_controller.gd" id="4_en41u"]
+[ext_resource type="Script" uid="uid://3cdi5jrqyikb" path="res://main/position_judge_controller.gd" id="5_u7x3r"]
+
+[node name="Game" type="Node2D" unique_id=1045205810]
+script = ExtResource("1_ux4xf")
+
+[node name="Environment" parent="." unique_id=925461628 instance=ExtResource("1_458dk")]
+unique_name_in_owner = true
+position = Vector2(1784, 1573)
+
+[node name="Player" parent="." unique_id=1674007149 instance=ExtResource("2_ux4xf")]
+unique_name_in_owner = true
+position = Vector2(283, 597)
+
+[node name="RotationJudge" type="Marker2D" parent="Player" unique_id=126655428]
+position = Vector2(-6, -105)
+gizmo_extents = 200.0
+script = ExtResource("3_ej72j")
+
+[node name="SplashJudge" type="Node" parent="." unique_id=1783197990]
+script = ExtResource("4_en41u")
+
+[node name="PositionJudge" type="Node" parent="." unique_id=1081314777]
+script = ExtResource("5_u7x3r")
