@@ -17,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://dploi18cahec4" path="res://assets/music/kf027602-escape-velocity.wav" id="12_yo04u"]
 [ext_resource type="Script" uid="uid://6k0cpjg4m8da" path="res://main/game/audio_stream_player_2d.gd" id="13_5xupx"]
 [ext_resource type="Texture2D" uid="uid://cuaghwv4513y7" path="res://assets/judges/IMG_2009.png" id="13_q786k"]
+[ext_resource type="Texture2D" uid="uid://c4lf0olv0mp2g" path="res://assets/environment/Beckenrand.png" id="18_y4tkr"]
+[ext_resource type="Texture2D" uid="uid://cfwus6lad8ib6" path="res://assets/environment/Mitte.png" id="19_812s6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pgop"]
 animations = [{
@@ -154,6 +156,16 @@ max_distance = 20090000.0
 bus = &"Music"
 script = ExtResource("13_5xupx")
 
-[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
 [node name="CameraMarker" type="Marker2D" parent="." unique_id=737996340]
 position = Vector2(1539, 2045)
+
+[node name="Beckenrand" type="Sprite2D" parent="." unique_id=384993733]
+z_index = 10
+position = Vector2(1602, 3922)
+scale = Vector2(1, 1.12)
+texture = ExtResource("18_y4tkr")
+
+[node name="Mitte" type="Sprite2D" parent="." unique_id=356753971]
+z_index = 21
+position = Vector2(1577, 3928)
+texture = ExtResource("19_812s6")
