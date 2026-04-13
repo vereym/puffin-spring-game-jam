@@ -44,10 +44,6 @@ height = 48.164703
 [node name="Torso" type="RigidBody2D" parent="." unique_id=16457439]
 script = ExtResource("1_xqnmy")
 
-[node name="Camera2D" type="Camera2D" parent="Torso" unique_id=242584100]
-position = Vector2(-1, -99)
-zoom = Vector2(0.673, 0.673)
-
 [node name="Torso" type="Sprite2D" parent="Torso" unique_id=453898488]
 z_index = 2
 scale = Vector2(0.1, 0.1)

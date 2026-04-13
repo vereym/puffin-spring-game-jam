@@ -8,11 +8,56 @@
 [ext_resource type="Texture2D" uid="uid://bcwldrr6be8gi" path="res://assets/judges/Stuhl.png" id="5_6lqia"]
 [ext_resource type="Script" uid="uid://3cdi5jrqyikb" path="res://main/position_judge_controller.gd" id="5_u7x3r"]
 [ext_resource type="Texture2D" uid="uid://cds514wv82chn" path="res://assets/judges/IMG_2024.png" id="6_u71ym"]
+[ext_resource type="Texture2D" uid="uid://c8hswgpp4ox3a" path="res://assets/judges/IMG_2010.png" id="7_36fbw"]
 [ext_resource type="Texture2D" uid="uid://sglm0n1m1kdn" path="res://assets/judges/IMG_2022.png" id="8_yo04u"]
+[ext_resource type="Texture2D" uid="uid://bkwemftekli1k" path="res://assets/judges/IMG_2011.png" id="10_2wwl3"]
 [ext_resource type="Texture2D" uid="uid://becgtoiv1em0f" path="res://assets/judges/IMG_2023.png" id="10_5xupx"]
-[ext_resource type="Script" path="res://main/game/rating_controller.gd" id="11_u71ym"]
 [ext_resource type="AudioStream" uid="uid://dploi18cahec4" path="res://assets/music/kf027602-escape-velocity.wav" id="12_yo04u"]
 [ext_resource type="Script" uid="uid://6k0cpjg4m8da" path="res://main/game/audio_stream_player_2d.gd" id="13_5xupx"]
+[ext_resource type="Script" uid="uid://bodcmjvmktex6" path="res://main/game/rating_controller.gd" id="11_u71ym"]
+[ext_resource type="Texture2D" uid="uid://cuaghwv4513y7" path="res://assets/judges/IMG_2009.png" id="13_q786k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pgop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_u71ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_36fbw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4tkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yo04u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2wwl3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_812s6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5xupx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q786k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=1045205810]
 script = ExtResource("1_ux4xf")
@@ -40,10 +85,14 @@ position = Vector2(2170.0605, 950.2497)
 scale = Vector2(0.875, 0.875)
 texture = ExtResource("5_6lqia")
 
-[node name="Img2024" type="Sprite2D" parent="Player/RotationJudge/Visual" unique_id=591174741]
+[node name="Sprites" type="AnimatedSprite2D" parent="Player/RotationJudge/Visual" unique_id=505381456]
 position = Vector2(2121, 227)
 scale = Vector2(0.413, 0.413)
-texture = ExtResource("6_u71ym")
+sprite_frames = SubResource("SpriteFrames_5pgop")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=267148136]
+position = Vector2(-1, -99)
+zoom = Vector2(0.673, 0.673)
 
 [node name="SplashJudge" type="Node2D" parent="." unique_id=2091526588]
 position = Vector2(275, 1697)
@@ -55,10 +104,10 @@ position = Vector2(1144.1785, 1501.007)
 scale = Vector2(0.875, 0.875)
 texture = ExtResource("5_6lqia")
 
-[node name="Img2022" type="Sprite2D" parent="SplashJudge" unique_id=2069465144]
+[node name="Sprites" type="AnimatedSprite2D" parent="SplashJudge" unique_id=1871519084]
 position = Vector2(1308, 776)
 scale = Vector2(0.4130701, 0.4130701)
-texture = ExtResource("8_yo04u")
+sprite_frames = SubResource("SpriteFrames_y4tkr")
 
 [node name="PositionJudge" type="Node2D" parent="." unique_id=1992753232]
 position = Vector2(275, 1724)
@@ -70,10 +119,10 @@ position = Vector2(3659, 1437.0105)
 scale = Vector2(0.875, 0.875)
 texture = ExtResource("5_6lqia")
 
-[node name="Img2023" type="Sprite2D" parent="PositionJudge" unique_id=2117395123]
+[node name="Sprites" type="AnimatedSprite2D" parent="PositionJudge" unique_id=1967939756]
 position = Vector2(3586, 687)
 scale = Vector2(0.413, 0.413)
-texture = ExtResource("10_5xupx")
+sprite_frames = SubResource("SpriteFrames_812s6")
 
 [node name="Rating" type="Node" parent="." unique_id=1080299925]
 script = ExtResource("11_u71ym")
@@ -86,3 +135,5 @@ bus = &"Music"
 script = ExtResource("13_5xupx")
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
+[node name="CameraMarker" type="Marker2D" parent="." unique_id=737996340]
+position = Vector2(1539, 2045)

@@ -2,6 +2,7 @@ extends Node
 
 
 var _player_entered_pool := false
+signal rating(splash)
 
 
 func _ready():
@@ -26,4 +27,8 @@ func _on_player_entered_pool():
 		return
 	_player_entered_pool = true
 
-	print("enterd")
+	($Sprites as AnimatedSprite2D).frame = 1
+
+	var bounds : Vector2 = get_x_bounds(%Player) if %Player != null else null
+	if bounds != null:
+		rating.emit(bounds.y - bounds.x)

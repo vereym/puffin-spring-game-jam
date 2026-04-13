@@ -21,6 +21,7 @@ SignalBus="*uid://dimsohu7fi0of"
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
 [file_customization]
